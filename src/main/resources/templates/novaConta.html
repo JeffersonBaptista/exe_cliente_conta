@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jefferson Bank</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+
+
+</head>
+
+<body>
+    <div class="menu">
+        <nav>
+            <ul class="lista">
+                <li> <a href="/contas">Contas</a> </li>
+                <li><a href=" "> | </a></li>
+                <li> <a href="/">Home</a> </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="divform">
+
+
+        <form class="areaform" method="POST">
+            <fieldset>
+                <legend>
+                    <h2>Nova Conta</h2>
+                </legend>
+                Nome: <input type="text" name="nome"><br />
+                CPF: <input type="text" name="cpf"><br />
+                Telefone: <input type="text" name="telefone"><br />
+                Numero conta: <input type="text" name="numeroConta"><br />
+                Deposito conta corrente:$ <input type="number" step="any" name="saldoCorrente" value="0.0"><br />
+                Deposito conta poupança:$ <input type="number" step="any" name="saldoPoupanca" value="0.0"><br />
+                <button type="submit">Cria </button>
+
+            </fieldset>
+        </form>
+
+
+
+    </div>
+
+
+    <div th:each="erro : ${erros}">
+        <h2 th:text="${erro}"></h2>
+
+    </div>
+    <div th:each="mensagem : ${mensagens}">
+        <h2 th:text="${mensagem}"></h2>
+
+    </div>
+
+
+
+</body>
+
+</html>

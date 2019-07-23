@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jefferson Bank</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+
+
+</head>
+
+<body>
+    <div class="menu">
+        <nav>
+            <ul class="lista">
+                <li> <a href="/novaConta">Nova conta</a> </li>
+                <li><a href=" "> | </a></li>
+                <li> <a href="/">Home</a> </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="contas" th:each="conta : ${contas}">
+            <p th:text="'numero conta: '+${conta.numeroConta}"></p>
+            <p th:text="'nome: '+${conta.cliente.nome}"></p>
+
+    </div>
+
+       
+
+
+
+
+
+</body>
+
+</html>
