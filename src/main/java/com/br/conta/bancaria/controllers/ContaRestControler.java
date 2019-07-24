@@ -16,20 +16,20 @@ import com.br.conta.bancaria.models.Conta;
 import com.br.conta.bancaria.services.ContaService;
 
 @RestController
-@RequestMapping("/contas")
+@RequestMapping("/contas/api")
 public class ContaRestControler {
 	
 	@Autowired
 	private ContaService contaService;
 	
-//	@GetMapping
-//	public ResponseEntity pegarContas() {
-//		if (contaService.totalContas() > 0) {
-//			return ResponseEntity.ok(contaService.exibirTodasContas());
-//		}
-//		return ResponseEntity.noContent().build();
-//
-//	}
+	@GetMapping
+	public ResponseEntity pegarContas() {
+		if (contaService.totalContas() > 0) {
+			return ResponseEntity.ok(contaService.exibirTodasContas());
+		}
+		return ResponseEntity.noContent().build();
+
+	}
 
 	@PostMapping
 	public ResponseEntity<Conta> criarMansagem(@RequestBody Conta conta) {
