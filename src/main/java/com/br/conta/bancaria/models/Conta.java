@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Conta implements Serializable {
 	private static final long serilVersionUID = 1L;
@@ -29,6 +31,7 @@ public class Conta implements Serializable {
 	private double saldoPoupanca;
 
 	@OneToOne(cascade = {CascadeType.ALL})
+	@JsonIgnoreProperties("conta")
 	private Cliente cliente;
 
 	public Conta() {
